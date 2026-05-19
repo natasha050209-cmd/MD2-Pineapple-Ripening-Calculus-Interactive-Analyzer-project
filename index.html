@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD2 Pineapple Maturation: Calculus & Bioscience Dashboard</title>
+    <!-- Tailwind CSS for modern utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for engaging visual icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for beautiful interactive data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- KaTeX for rendering high-fidelity LaTeX mathematical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header/Hero Section -->
+    <header class="bg-gradient-to-r from-emerald-800 to-teal-700 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <span class="bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full border border-emerald-500/30">
+                        <i class="fa-solid fa-seedling mr-1"></i> SFP: Agro Product Technology Specialization
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1.5">
+                        MD2 Pineapple Ripening & Calculus Interactive Analyzer
+                    </h1>
+                    <p class="text-emerald-100 text-sm sm:text-base mt-1 font-medium">
+                        Optimizing Malaysian Fresh Fruit Harvesting Windows using First Derivatives \( f'(x) \)
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 bg-white/10 p-3 rounded-xl border border-white/10 backdrop-blur-sm self-stretch md:self-auto justify-center">
+                    <img src="https://placehold.co/50x50/065f46/ffffff?text=LPNM" alt="LPNM Logo Placeholder" class="w-10 h-10 rounded-lg object-cover border border-emerald-500/50" onerror="this.src='https://img.icons8.com/color/96/pineapple.png'">
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase tracking-wider text-emerald-300 font-bold">In Collaboration with</p>
+                        <p class="text-xs font-bold leading-tight">Malaysian Agricultural Systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 w-full">
+        
+        <!-- Context Alert / Welcome Banner -->
+        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl mb-8 shadow-sm">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fa-solid fa-circle-info text-emerald-600 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-emerald-900 leading-relaxed">
+                        <strong>Salam & Welcome, Agro-Product Tech Student!</strong> As pineapple fruits mature, starch gets converted into sugars, raising the Total Soluble Solids (measured in <strong>°Brix</strong>). If harvested too early, the fruit is sour; if harvested too late, post-harvest losses skyrocket due to senescence and fermentation. This application models this biological process mathematically, utilizing <strong>calculus derivatives</strong> to pinpoint the optimal harvest window.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Formulas Card -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                        <i class="fa-solid fa-calculator text-emerald-600"></i> Mathematical Modeling
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        Based on empirical MD2 growth datasets, sugar accumulation (Total Soluble Solids, \( S(t) \) in °Brix) over weeks post-flowering \( t \) is modeled as a cubic function:
+                    </p>
+                    
+                    <!-- Primary Function Box -->
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-150 mb-4 text-center">
+                        <span class="text-xs text-slate-400 font-semibold block mb-1">CUMULATIVE SUGAR FUNCTION \( f(t) \)</span>
+                        <div class="text-base sm:text-lg font-mono text-emerald-800 font-bold">
+                            $$f(t) = -0.012t^3 + 0.52t^2 - 6.0t + 24.0$$
+                        </div>
+                        <span class="text-[10px] text-slate-400 block mt-1">Domain: \( t \in [10, 22] \) weeks post-induction</span>
+                    </div>
+
+                    <!-- Derivative Function Box -->
+                    <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 text-center">
+                        <span class="text-xs text-emerald-600 font-semibold block mb-1">RATE OF SUGAR ACCUMULATION \( f'(t) \)</span>
+                        <div class="text-base sm:text-lg font-mono text-emerald-700 font-bold">
+                            $$f'(t) = -0.036t^2 + 1.04t - 6.0$$
+                        </div>
+                        <span class="text-[10px] text-emerald-600/75 block mt-1">First Derivative: Instantaneous Rate (°Brix/week)</span>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-400">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Units: \( t \) (weeks), \( f(t) \) (°Brix), \( f'(t) \) (°Brix/week)</span>
+                </div>
+            </div>
+
+            <!-- Interactive Metrics display -->
+            <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-flask text-teal-600"></i> Real-time Bioscience Biosensor Panel
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-150 text-center flex flex-col justify-center">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Selected Maturity Stage</span>
+                        <span id="metric-week" class="text-3xl font-extrabold text-slate-800 mt-1">15.0 Weeks</span>
+                        <span class="text-xs text-slate-400 mt-1">Post-flowering index</span>
+                    </div>
+                    
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 text-center flex flex-col justify-center">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-amber-700">Accumulated Sugar</span>
+                        <span id="metric-brix" class="text-3xl font-extrabold text-amber-600 mt-1">10.50 °Brix</span>
+                        <span class="text-xs text-amber-500 mt-1">Total Soluble Solids (TSS)</span>
+                    </div>
+                    
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-center flex flex-col justify-center">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Instantaneous Rate</span>
+                        <span id="metric-derivative" class="text-3xl font-extrabold text-emerald-600 mt-1">+1.50</span>
+                        <span class="text-xs text-emerald-500 mt-1">°Brix accumulation / week</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Layman Explanation Box -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-xl relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl">
+                        <i class="fa-solid fa-leaf text-white"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-slate-900" id="status-badge">Synthesis Phase</span>
+                        <span class="text-xs text-slate-300">Biochemical Status</span>
+                    </div>
+                    <h4 class="font-bold text-base text-amber-400 mb-1" id="layman-title">Rapid Sugar Loading occurring</h4>
+                    <p class="text-sm text-slate-200 leading-relaxed" id="layman-desc">
+                        During Week 15, the MD2 fruit acts as a strong carbohydrate sink. Photosynthetic sucrose is rapidly funneled from leaves into the flesh cells. The positive rate of change means sugar content is rising fast.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Analysis Area (Graph & Controls) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            
+            <!-- Graph Visualizer -->
+            <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">
+                                <i class="fa-solid fa-chart-area text-emerald-600 mr-1"></i> Interactive Ripening Curve
+                            </h3>
+                            <p class="text-xs text-slate-500">Click anywhere on the curve to inspect derivatives and tangent slopes</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200">
+                                <span class="w-2 h-2 rounded-full bg-amber-500 mr-1.5 animate-pulse"></span> Optimal Harvest Window (W19 - W21)
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Graph Canvas container -->
+                    <div class="relative min-h-[300px] h-[350px] w-full">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Range Slider Control -->
+                <div class="mt-6 pt-4 border-t border-slate-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <label for="weekSlider" class="text-sm font-semibold text-slate-700 flex items-center gap-1">
+                            <i class="fa-solid fa-clock text-slate-400"></i> Adjust Maturity (Weeks):
+                        </label>
+                        <span id="sliderValue" class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full">Week 15.0</span>
+                    </div>
+                    <input type="range" id="weekSlider" min="10" max="22" step="0.1" value="15" 
+                           class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                        <span>Week 10 (Early Fruit Development)</span>
+                        <span>Week 16 (Intermission)</span>
+                        <span>Week 22 (Senescence)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Industry Application -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+                        <i class="fa-solid fa-industry text-amber-600"></i> Commercial Relevance
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        In Malaysia's high-tech pineapple farms (such as those in Johor), managing logistics for fresh export or canning requires calculated precision.
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Inflection Point Info -->
+                        <div class="flex items-start gap-3">
+                            <div class="bg-teal-50 text-teal-700 p-2 rounded-lg mt-0.5 text-xs font-bold shrink-0">
+                                <i class="fa-solid fa-arrows-up-to-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs text-slate-800">The Inflection Point (\( f''(t) = 0 \))</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mt-0.5">
+                                    Occurs around <strong>Week 14.4</strong> where accumulation speed peaks. This represents the fastest rate of cellular sugar transformation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Shelf-Life Management -->
+                        <div class="flex items-start gap-3">
+                            <div class="bg-amber-50 text-amber-700 p-2 rounded-lg mt-0.5 text-xs font-bold shrink-0">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs text-slate-800">Export Logistics Timing</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mt-0.5">
+                                    Exporting raw fruit to distant markets requires harvesting slightly earlier when \( f'(t) > 0.5 \) to allow in-transit ripening. Local premium sales require harvesting precisely when \( f'(t) \approx 0 \).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Processing Quality control -->
+                        <div class="flex items-start gap-3">
+                            <div class="bg-purple-50 text-purple-700 p-2 rounded-lg mt-0.5 text-xs font-bold shrink-0">
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs text-slate-800">Brix-Acid Ratio</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed mt-0.5">
+                                    Acidity and sugar levels hold an inverse biological relationship. High sugar and low acid maximize the standard sensory index.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informational Note -->
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-150 mt-4">
+                    <span class="text-[10px] font-bold text-slate-400 block uppercase mb-1">Guiding Principle</span>
+                    <p class="text-xs text-slate-600 italic leading-snug">
+                        "For MD2 exporters, harvest scheduled during the week where \( f'(t) \rightarrow 0 \) guarantees peak sweetness, maximizing profit per acre."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-depth Academic Explanations -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 mb-8">
+            <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6 border-b pb-4">
+                <i class="fa-solid fa-book-open text-emerald-600"></i> Deep Dive: Bioscience & Calculus Integration
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-bold text-slate-800 text-base mb-2">1. The Biological Phenomenon</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        During the initial stages post-flowering (Weeks 10-12), the pineapple fruit structure is actively dividing cells. Starch storage accumulates inside flesh tissues, but actual soluble simple sugars (such as sucrose, glucose, and fructose) remain extremely low. 
+                    </p>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        As ripening enzymes (e.g., amylases and invertases) activate, starch gets rapidly hydrolyzed into sugars. This metabolic shift is reflected by the steep climb in the graph. The rate at which these chemical conversions happen is the <strong>derivative of the sugar accumulation curve</strong>.
+                    </p>
+                    <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-100 text-xs text-slate-700">
+                        <strong class="text-amber-800 block mb-1">Key Bioscience Terminology:</strong>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Soluble Solids (°Brix):</strong> Quantifies dissolved sucrose equivalent levels in plant juices.</li>
+                            <li><strong>Senescence:</strong> Programmed aging where fruits begin metabolic self-consumption.</li>
+                            <li><strong>Sink Strength:</strong> Capacity of the fruit organs to import carbohydrates from plant leaves.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-800 text-base mb-2">2. The Calculus Translation</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        If \( f(t) \) measures the total sugar quantity present at week \( t \), then the derivative \( f'(t) \) is the <strong>instantaneous speed</strong> at which sweetness increases or decreases at that exact micro-moment.
+                    </p>
+                    
+                    <div class="space-y-3.5 mt-4">
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0"></span>
+                            <div class="text-xs text-slate-600">
+                                <strong class="text-slate-900">\( f'(t) > 0 \):</strong> Sugars are actively increasing. The steeper the tangent, the faster the chemical sucrose conversion occurs.
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
+                            <div class="text-xs text-slate-600">
+                                <strong class="text-slate-900">\( f'(t) = 0 \):</strong> The accumulation has peaked (optimal stationary point). This corresponds to maximum commercial sweetness.
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0"></span>
+                            <div class="text-xs text-slate-600">
+                                <strong class="text-slate-900">\( f'(t) < 0 \):</strong> Senescence and degradation. Yeast and physiological cellular respiration are consuming sugars, turning tissues watery and fermenting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-150 mt-4 text-xs">
+                        <strong class="text-slate-800 block mb-1">Finding the Maximum Sweetness Point:</strong>
+                        To locate the exact week of maximum sugar, solve for \( f'(t) = 0 \) within our range:
+                        <div class="font-mono text-center my-2 text-slate-700">
+                            \(-0.036t^2 + 1.04t - 6.0 = 0\)
+                        </div>
+                        Using quadratic equations, the peak sweet spot evaluates mathematically to approximately <strong>\( t \approx 20.3 \) weeks</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Interactive Quiz -->
+        <div class="bg-gradient-to-br from-emerald-900 to-teal-950 text-white p-6 sm:p-8 rounded-2xl shadow-md mb-8">
+            <div class="max-w-3xl">
+                <h3 class="text-xl font-bold flex items-center gap-2 mb-2">
+                    <i class="fa-solid fa-graduation-cap text-emerald-400"></i> Interactive Student Self-Assessment
+                </h3>
+                <p class="text-xs text-emerald-200 mb-6 leading-relaxed">
+                    Test your understanding of calculus derivatives within agro-product technology parameters. Select the correct option below.
+                </p>
+
+                <!-- Quiz Question 1 -->
+                <div class="space-y-6">
+                    <div class="border-b border-emerald-800 pb-5">
+                        <p class="font-medium text-sm text-emerald-100 mb-3">
+                            <span class="text-emerald-400 font-bold mr-1">Q1:</span> If a plant biologist determines that \( f'(t) = 0.1 \), while the current Brix is 15.0, what does this mathematically signal?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <button onclick="checkAnswer('q1', 'wrong')" class="q1-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                The fruit sugar level has peaked, proceed to final harvest.
+                            </button>
+                            <button onclick="checkAnswer('q1', 'correct')" class="q1-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                Sugar is still rising, but at a very slow pace. Let the crop stand slightly longer.
+                            </button>
+                            <button onclick="checkAnswer('q1', 'wrong2')" class="q1-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                Fermentation has commenced; the fruit has spoiled.
+                            </button>
+                        </div>
+                        <p id="q1-feedback" class="hidden mt-3 text-xs font-semibold"></p>
+                    </div>
+
+                    <!-- Quiz Question 2 -->
+                    <div>
+                        <p class="font-medium text-sm text-emerald-100 mb-3">
+                            <span class="text-emerald-400 font-bold mr-1">Q2:</span> Why does the rate of sugar accumulation, \( f'(t) \), decrease as weeks post-flowering approach Week 20?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <button onclick="checkAnswer('q2', 'wrong')" class="q2-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                The plant completely stops carrying out photosynthesis.
+                            </button>
+                            <button onclick="checkAnswer('q2', 'wrong2')" class="q2-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                Fertilizer is fully depleted within Malaysian crop soils.
+                            </button>
+                            <button onclick="checkAnswer('q2', 'correct')" class="q2-btn text-left text-xs bg-emerald-800/40 hover:bg-emerald-800/80 border border-emerald-700 p-3 rounded-lg transition-all duration-150">
+                                The physical limit of cell expansion and starch conversion capacity is reached.
+                            </button>
+                        </div>
+                        <p id="q2-feedback" class="hidden mt-3 text-xs font-semibold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic References & Data Sources -->
+        <section class="bg-slate-100 p-6 rounded-2xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-bookmark text-emerald-700"></i> Local Malaysian Reference Guidelines & Research
+            </h4>
+            <p class="text-[11px] text-slate-500 mb-4 leading-relaxed">
+                This cubic model and the physiological stages used reflect standardized maturation parameters documented across several official Malaysian agricultural publications:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
+                <div class="bg-white p-3 rounded-lg border border-slate-150 flex items-start gap-2.5">
+                    <i class="fa-solid fa-graduation-cap text-slate-400 mt-0.5"></i>
+                    <div>
+                        <strong class="text-slate-800">MARDI Research Journal (Vol. 44, No. 2)</strong>
+                        <p class="text-[11px] text-slate-400 mt-0.5">"Physicochemical changes of MD2 pineapple during developmental and ripening phases" - Malaysian Agricultural Research and Development Institute.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-slate-150 flex items-start gap-2.5">
+                    <i class="fa-solid fa-graduation-cap text-slate-400 mt-0.5"></i>
+                    <div>
+                        <strong class="text-slate-800">Lembaga Perindustrian Nanas Malaysia (LPNM)</strong>
+                        <p class="text-[11px] text-slate-400 mt-0.5">"Guidelines on Post-Harvest Handling and Brix Standards for Commercial Export Grade of MD2 Pineapples" - Official Malaysian Pineapple Industry Board Website guidelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-6 mt-12 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 Malaysia Agricultural Science Educational Portals. Made for Agro Product Technology Undergraduates.</p>
+            <p class="text-slate-600 mt-1">Harnessing Applied Calculus & Biochemical Dynamics to Feed the Future.</p>
+        </div>
+    </footer>
+
+    <!-- Javascript Engine -->
+    <script>
+        // Core Mathematical Functions
+        // Cumulative Sugar Level f(t)
+        function f(t) {
+            return -0.012 * Math.pow(t, 3) + 0.52 * Math.pow(t, 2) - 6.0 * t + 24.0;
+        }
+
+        // First Derivative - Sugar Accumulation Speed f'(t)
+        function df(t) {
+            return -0.036 * Math.pow(t, 2) + 1.04 * t - 6.0;
+        }
+
+        // Data arrays generation for the full week spectrum [10 to 22]
+        const weeksArray = [];
+        const brixValues = [];
+        for (let w = 10; w <= 22; w += 0.2) {
+            weeksArray.push(parseFloat(w.toFixed(1)));
+            brixValues.push(parseFloat(f(w).toFixed(3)));
+        }
+
+        // DOM elements references
+        const slider = document.getElementById('weekSlider');
+        const sliderValueDisplay = document.getElementById('sliderValue');
+        const metricWeek = document.getElementById('metric-week');
+        const metricBrix = document.getElementById('metric-brix');
+        const metricDerivative = document.getElementById('metric-derivative');
+        const laymanTitle = document.getElementById('layman-title');
+        const laymanDesc = document.getElementById('layman-desc');
+        const statusBadge = document.getElementById('status-badge');
+
+        // Dynamic Layman Bioscience Explanations Matrix
+        function getLaymanExplanation(t, rate, brix) {
+            if (t >= 10 && t < 12.5) {
+                return {
+                    title: "Early Development: Core Acid Accumulation",
+                    badge: "Vegetative/Cell division",
+                    badgeColor: "bg-slate-500",
+                    desc: `At Week ${t.toFixed(1)}, the pineapple is green and hard. Starch storage has begun, but hydrolytic enzymes remain dormant. Simple sugar levels are extremely low (${brix.toFixed(1)} °Brix). The positive rate of change of +${rate.toFixed(2)} °Brix/week signals metabolic infrastructure preparation. Harvesting now leads to high-acid, sour, unmarketable fruit.`
+                };
+            } else if (t >= 12.5 && t < 16.5) {
+                return {
+                    title: "Peak Sweetness Conversion occurring",
+                    badge: "Rapid Loading",
+                    badgeColor: "bg-amber-500",
+                    desc: `This is the absolute growth spur phase! With a derivative rate of +${rate.toFixed(2)} °Brix/week, enzyme activity is converting cellular starch deposits into soluble sucrose at peak speed. The fruits act as highly active carbohydrate sinks. Do not harvest; allowing the crop to stand yields enormous increases in sugar daily.`
+                };
+            } else if (t >= 16.5 && t < 19) {
+                return {
+                    title: "Deceleration: Quality Stabilization",
+                    badge: "Stabilizing",
+                    badgeColor: "bg-teal-500",
+                    desc: `Maturity approaches. Sweetness is high (${brix.toFixed(1)} °Brix), but the speed of accumulation is decelerating (+${rate.toFixed(2)} °Brix/week). Cellular expansion is ending, and the pineapple begins forming key volatile aromatic compounds (esters) which give the MD2 its signature smell. Plan harvest logistics.`
+                };
+            } else if (t >= 19 && t <= 20.8) {
+                return {
+                    title: "Optimal Harvesting Window (Peak Brix)",
+                    badge: "Optimal Harvest",
+                    badgeColor: "bg-emerald-500",
+                    desc: `THE PERFECT HARVEST MOMENT! The derivative f'(t) approaches zero (${rate.toFixed(2)} °Brix/week), meaning sugar accumulation has hit its mathematical ceiling. Sugar concentrations are stable at an ideal ${brix.toFixed(1)} °Brix, and acidity is balanced. Harvesting now ensures maximum export shelf-life and premium premium MD2 grade.`
+                };
+            } else {
+                return {
+                    title: "Senescence / Ripening Decay",
+                    badge: "Over-ripe / Decay",
+                    badgeColor: "bg-rose-500",
+                    desc: `OVER-RIPE WARNING. The derivative f'(t) is negative (${rate.toFixed(2)} °Brix/week), indicating sugar loss. Cellular respiration and yeasts are eating up sucrose. Flesh cells are collapsing, causing water-logging and fermentation. These fruits are prone to physical bruising and fail post-harvest export requirements.`
+                };
+            }
+        }
+
+        // Setup the localized Tangent Line Dataset
+        function getTangentDataset(t0) {
+            const slope = df(t0);
+            const y0 = f(t0);
+            
+            // Generate tangent lines limited to a range surrounding the point [t0-1.5 to t0+1.5] for clarity
+            const tangentData = weeksArray.map(w => {
+                if (Math.abs(w - t0) <= 1.5) {
+                    return parseFloat((slope * (w - t0) + y0).toFixed(3));
+                }
+                return null; // Empty array cells mapped as null so Chart.js leaves them blank
+            });
+            return tangentData;
+        }
+
+        // Initialize Chart.js configuration
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        let initialT0 = 15;
+        
+        const growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: weeksArray,
+                datasets: [
+                    {
+                        label: 'Total Soluble Solids (f(t) in °Brix)',
+                        data: brixValues,
+                        borderColor: '#059669', // Emerald-600
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        fill: false,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Tangent Slope at Selected Point',
+                        data: getTangentDataset(initialT0),
+                        borderColor: '#d97706', // Amber-600
+                        borderWidth: 2.5,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false,
+                        spanGaps: false
+                    },
+                    {
+                        label: 'Current Inspected Point',
+                        data: weeksArray.map(w => w === initialT0 ? f(initialT0) : null),
+                        borderColor: '#d97706',
+                        backgroundColor: '#fff',
+                        borderWidth: 3,
+                        pointRadius: 8,
+                        pointHoverRadius: 10,
+                        showLine: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { family: 'Inter', size: 11 }
+                        }
+                    },
+                    tooltip: {
+                        enabled: false // Custom HTML metrics handles inspection reporting
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Weeks Post-Anthesis (Time t)',
+                            font: { weight: 'bold', family: 'Inter' }
+                        },
+                        grid: { color: '#f1f5f9' }
+                    },
+                    y: {
+                        min: 2,
+                        max: 18,
+                        title: {
+                            display: true,
+                            text: 'Soluble Solids Content (°Brix)',
+                            font: { weight: 'bold', family: 'Inter' }
+                        },
+                        grid: { color: '#f1f5f9' }
+                    }
+                },
+                // Add click listener on canvas
+                onClick: (e) => {
+                    const points = growthChart.getElementsAtEventForMode(e, 'nearest', { intersect: false }, true);
+                    if (points.length) {
+                        const index = points[0].index;
+                        const clickedWeek = weeksArray[index];
+                        slider.value = clickedWeek;
+                        updateInteractiveAnalysis(clickedWeek);
+                    }
+                }
+            }
+        });
+
+        // Interactive States Update loop
+        function updateInteractiveAnalysis(t) {
+            const currentBrix = f(t);
+            const currentRate = df(t);
+            
+            // Update UI elements values
+            sliderValueDisplay.textContent = `Week ${t.toFixed(1)}`;
+            metricWeek.textContent = `${t.toFixed(1)} Weeks`;
+            metricBrix.textContent = `${currentBrix.toFixed(2)} °Brix`;
+            
+            const rateSign = currentRate >= 0 ? '+' : '';
+            metricDerivative.textContent = `${rateSign}${currentRate.toFixed(2)}`;
+            
+            // Highlight color shift for rate
+            if (currentRate < 0) {
+                metricDerivative.className = "text-3xl font-extrabold text-rose-500 mt-1";
+            } else if (currentRate < 0.3) {
+                metricDerivative.className = "text-3xl font-extrabold text-amber-500 mt-1";
+            } else {
+                metricDerivative.className = "text-3xl font-extrabold text-emerald-600 mt-1";
+            }
+
+            // Update Dynamic Layman Explanatory box texts
+            const detail = getLaymanExplanation(t, currentRate, currentBrix);
+            laymanTitle.textContent = detail.title;
+            laymanDesc.textContent = detail.desc;
+            statusBadge.className = `px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white ${detail.badgeColor}`;
+            statusBadge.textContent = detail.badge;
+
+            // Recalculate Tangent values
+            growthChart.data.datasets[1].data = getTangentDataset(t);
+            growthChart.data.datasets[2].data = weeksArray.map(w => Math.abs(w - t) < 0.1 ? currentBrix : null);
+            growthChart.update('none'); // Update smoothly without triggers lag
+        }
+
+        // Register interactive range-slider listener
+        slider.addEventListener('input', (e) => {
+            const value = parseFloat(e.target.value);
+            updateInteractiveAnalysis(value);
+        });
+
+        // Initialize display to state Week 15 on loading
+        updateInteractiveAnalysis(15);
+
+        // Self-Assessment Quiz Validation Engine
+        function checkAnswer(question, type) {
+            const feedbackBox = document.getElementById(`${question}-feedback`);
+            const buttons = document.querySelectorAll(`.${question}-btn`);
+            
+            // Lock buttons input
+            buttons.forEach(btn => btn.disabled = true);
+
+            feedbackBox.classList.remove('hidden');
+
+            if (type === 'correct') {
+                feedbackBox.className = "mt-3 text-xs font-semibold text-emerald-400";
+                feedbackBox.innerHTML = "<i class='fa-solid fa-circle-check'></i> Correct! Outstanding analysis. You have connected mathematical rates to physical metabolism.";
+            } else {
+                feedbackBox.className = "mt-3 text-xs font-semibold text-rose-400";
+                feedbackBox.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Incorrect. Review the first derivative rules. \( f'(t) \) is the speed of change, not absolute value.";
+            }
+        }
+    </script>
+</body>
+</html>
